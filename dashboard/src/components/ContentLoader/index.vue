@@ -6,7 +6,7 @@
     }"
     class="opacity-75 content-loader"
   >
-  <span :style="{animationDuration }" class="content-loader">
+  <span :style="{animationDuration }" class="content-loader--fx">
     <slot />
   </span>
 
@@ -73,6 +73,19 @@ export default {
   background-image: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
   background-position: 0 0;
   background-size: 1000 100;
-  animation: shimmer infinite alternative ease-in-out;
+  animation: shimmer infinite alternate ease-in-out;
+}
+
+.content-loader--fx {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transform: translateX(-100%);
+  background-image: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+  background-position: 0 0;
+  background-size: 1000 100;
+  animation: shimmer infinite alternate ease-in-out;
 }
 </style>
