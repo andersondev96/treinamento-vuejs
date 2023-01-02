@@ -29,18 +29,59 @@
           </suspense>
         </div>
         <div class="px-10 pt-20 col-span-3">
+          <p
+            v-if="state.hasError"
+            class="text-lg text-center text-gray-800 font-regular"
+          >
+            Aconteceu um erro ao carregar os feedbacks ...
+          </p>
+          <p
+            v-if="!state.feedbacks.length && !state.isLoading"
+            class="text-lg text-center text-gray-800 font-regular"
+          >
+            Ainda nenhum feedback recebido
+          </p>
 
+          <feedback-card-loading v-if="state.isLoading"/>
+          <feedback-card
+            v-else
+            v-for="(feedback, index) in state.feedback"
+            :key="feedback.id"
+            :is-opened="index === 0"
+            :feedback="feedback"
+            class="mb-8"
+          />
         </div>
       </div>
     </div>
 </template>
 
 <script>
+import { reactive } from 'vue'
 import Filters from './Filters'
 import FiltersLoading from './FiltersLoading'
 import HeaderLogged from '../../components/HeaderLogged'
+import FeedbackCard from '../../components/FeedBackCard'
+import FeedbackCardLoading from '../../components/FeedBackCardLoading'
 
 export default {
-  components: { HeaderLogged, Filters, FiltersLoading }
+  components: {
+    HeaderLogged,
+    Filters,
+    FiltersLoading,
+    FeedbackCard,
+    FeedbackCardLoading
+  },
+  setup () {
+    const state = reactive({
+      isLoading: false,
+      feedbacks: [],
+      hasError: false
+    })
+
+    return {
+      state
+    }
+  }
 }
 </script>
