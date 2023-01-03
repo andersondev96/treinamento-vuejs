@@ -3,7 +3,7 @@
         :class="`bg-${classColor}`"
         class="p-2 text-xs font-black text-white uppercase rounded-full"
     >
-
+    {{  label  }}
     </span>
 </template>
 
@@ -20,7 +20,7 @@ export default {
       }
 
       if (props.type === 'IDEA') {
-        return 'problema'
+        return 'ideia'
       }
 
       return 'outros'
