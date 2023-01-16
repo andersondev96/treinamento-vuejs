@@ -3,9 +3,8 @@
     <component
       @open-box="handleOpenBox"
       @close-box="handleCloseBox"
-      is="state.component"
+      :is="state.component"
     />
-
   </teleport>
 </template>
 
