@@ -8,10 +8,20 @@ import {
 export interface Navigation {
   next(): void;
   back(): void;
+  setErrorState(): void;
+  setSuccessState(): void;
 }
 
 export default function useNavigation (): Navigation {
   const store = useStore()
+
+  function setErrorState (): void {
+    setCurrentComponent('Error')
+  }
+
+  function setSuccessState (): void {
+    setCurrentComponent('Success')
+  }
 
   function next (): void {
     if (store.currentComponent === 'SelectFeedbackType') {
@@ -26,5 +36,5 @@ export default function useNavigation (): Navigation {
     }
   }
 
-  return { next, back }
+  return { next, back, setErrorState, setSuccessState }
 }
