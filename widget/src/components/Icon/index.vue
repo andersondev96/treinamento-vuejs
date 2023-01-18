@@ -8,6 +8,8 @@ import ChevronDown from './ChevronDown.vue'
 import Chat from './Chat.vue'
 import ArrowRight from './ArrowRight.vue'
 import Close from './Close.vue'
+import Check from './Check.vue'
+import Attention from './Attention.vue'
 
 export default {
   components: {
@@ -15,7 +17,9 @@ export default {
     ChevronDown,
     Chat,
     Close,
-    ArrowRight
+    ArrowRight,
+    Check,
+    Attention
   },
   props: {
     name: { type: String, required: true }
