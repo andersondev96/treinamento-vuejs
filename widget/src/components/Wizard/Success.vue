@@ -32,6 +32,7 @@ import palette from '../../../palette.js'
 
 interface SetupReturn {
   goBack(): void;
+  palette: any;
 }
 
 export default defineComponent({
