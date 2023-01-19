@@ -5,11 +5,11 @@
       class="w-full rounded-lg border-2 border-gray-300 border-solid h-24 p-2 resize-none focus:outline-none">
     </textarea>
     <button
-      :disabled="submitButtonDisabled"
+      :disabled="submitButtonIsDisabled"
       :class="{
         'opacity-50': state.isLoading,
-        'opacity-50 bg-gray-100 text-gray-500': submitButtonDisabled,
-        'bg-brand-main text-white': !submitButtonDisabled
+        'opacity-50 bg-gray-100 text-gray-500': submitButtonIsDisabled,
+        'bg-brand-main text-white': !submitButtonIsDisabled
       }"
       @click="submitAFeedback"
       class="
@@ -31,8 +31,7 @@ import useStore from '@/hooks/store'
 import { setMessage } from '@/store'
 import Icon from '../Icon/index.vue'
 import { defineComponent, reactive, computed, ComputedRef } from 'vue'
-// import services from '../../services'
-const services = {}
+import services from '../../services'
 
 type State = {
   feedback: string;
@@ -66,9 +65,11 @@ export default defineComponent({
       state.isLoading = false
       setErrorState()
     }
+
     async function submitAFeedback (): Promise<void> {
       setMessage(state.feedback)
       state.isLoading = true
+
       try {
         const response = await services.feedbacks.create({
           type: store.feedbackType,
