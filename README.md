@@ -1,6 +1,7 @@
 # Treinamento de Vue.js
 ![code-size](https://img.shields.io/github/languages/code-size/andersondev96/treinamento-vuejs?color=%23DB46B3)
 ![language-count](https://img.shields.io/github/languages/count/andersondev96/treinamento-vuejs?color=%23DB46B3)
+![license](https://img.shields.io/github/license/andersondev96/treinamento-vuejs?color=%23DB46B3)
 
 Aplicação desenvolvida durante o Treinamento de Vue.js da Vue.js Brasil
 
