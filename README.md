@@ -6,7 +6,7 @@
 Aplicação desenvolvida durante o Treinamento de Vue.js da Vue.js Brasil
 
 [Sobre o projeto](#-sobre-o-projeto) | [Tecnologias utilizadas](#-tecnologias-utilizadas) | [Layout da aplicação](#-layout-da-aplicação) | 
-[Como executar a aplicação](como-executar-a-aplicação) | [Como contribuir](#-como-contribuir) | [Licença](#-licença) | [Autor](#-autor)
+[Como executar a aplicação](#-como-executar-a-aplicação) | [Como contribuir](#-como-contribuir) | [Licença](#-licença) | [Autor](#-autor)
 
 ## 📄 Sobre o projeto
 O projeto é um sistema de *feedbacks*, no qual possuirá um *widget*, que poderá ser vinculado a qualquer site, para os usuários deixarem os seus comentários.
